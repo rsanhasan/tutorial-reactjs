@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Data from './Data';
+import Input from './Input';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component{
+  constructor(props) {
+    super(props)
+    this.state = {name: 'Hasan', age: 22}
+  }
+
+  _changeName = () => this.setState({name: 'Diana', age: 25})
+  _changeName2 = (newName) => this.setState({name: newName})
+  _changeAge2 = (newAge) => this.setState({age:parseInt(newAge)})
+
+  render(){
+    return (
+      <div>
+        <h1>State dan Props</h1>
+        <Data
+          name={this.state.name}
+          age={this.state.age}
+        />
+        <Input
+          _changeName = {this._changeName}
+          _changeName2 = {this._changeName2}
+          _changeAge2 = {this._changeAge2}
+        />
+      </div>
+    );
+  }
 }
 
 export default App;
