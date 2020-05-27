@@ -55,7 +55,6 @@ class App extends React.Component{
   _saveTypeFilter = (value) => this.setState({ tipe: value})
 
 
-
   render(){
       const isUserLoginC = (this.state.isLogin? 'sudahLogin': 'belumLogin')
       return (
